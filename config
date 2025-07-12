@@ -28,6 +28,22 @@ set $rofi_cmd rofi \
 # TODO: add window with the next release of rofi-wayland
 set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 
+### keyboard
+# Keymap for input mode switching is set in
+# Fcitx5 configurator -> Global Options -> Hotkey -> Trigger Input Method
+# Set environgment variables
+exec_always env \
+	INPUT_METHOD=fcitx \
+	XMODIFIERS="@im=fcitx" \
+	GTK_IM_MODULE=fcitx \
+	QT_IM_MODULE=fcitx
+# Run fcitx5 deamon
+exec_always fctix5 -d
+# Optional: set keyboard layout
+input "type:keyboard" {
+	xkb_layout us
+}
+
 ### Floating Window
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable
 
