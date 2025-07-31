@@ -116,7 +116,7 @@ input type:pointer {
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
     # swaylock
-    bindsym Mod4+L exec swaylock
+    bindsym Mod4+L exec swaylock -f -c 000000
 #
 # Moving around:
 #
