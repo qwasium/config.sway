@@ -37,8 +37,9 @@ exec_always env \
 	XMODIFIERS="@im=fcitx" \
 	GTK_IM_MODULE=fcitx \
 	QT_IM_MODULE=fcitx
+
 # Run fcitx5 deamon
-exec_always fctix5 -d
+exec_always fcitx5 -d
 # Optional: set keyboard layout
 input "type:keyboard" {
 	xkb_layout us
